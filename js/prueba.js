@@ -44,14 +44,14 @@ function sistema(productos) {
             <div>
                 <h4> $${precio}
                 </h4>
-                <button class="boton_agregar" id=elimnar${id}> agregar</button>
+                <button class="botonAgregar" id=elimnar${id}> agregar</button>
             </div>
         </div>
     `;
       contenedorPrincipal.appendChild(contenedorProducto);
     });
 
-    let botonAgregarCarrito = document.querySelectorAll(`.boton_agregar`);
+    let botonAgregarCarrito = document.querySelectorAll(`.botonAgregar`);
     botonAgregarCarrito.forEach((e) => (e.onclick = agregarCarrito));
     if (localStorage.getItem("productoUsuario") != null) {
       carrito = JSON.parse(localStorage.getItem("productoUsuario"));
@@ -66,7 +66,6 @@ function sistema(productos) {
       contenedorPrincipal.innerHTML = `<p> Producto no encontrado</p>`;
     }
   }
-  console.log(productos);
   mostrarProducto(productos);
 
   //muestra  el contenido en carrito
@@ -111,27 +110,25 @@ function sistema(productos) {
         (contenedorCarritoJs.innerHTML += `
             <div id= envio_carrito>
                 <p> Nombre: ${nombre}</p> 
-                <button  class ="class_boton_restar" id=restar${id}>- </button>   
+                <button  class ="botonRestar" id=restar${id}>- </button>   
                 <span> ${cantidad} </span>
-                <button  class ="class_boton_agregar" id=sumar${id}> + </button>   
-                <button class="botones_quitar"  id=quitar${id}>quitar</button>
+                <button class ="class_boton_agregar" id=sumar${id}> + </button>   
+                <button class="botonQuitar"  id=quitar${id}>quitar</button>
                 <span> ${cantidad * precio} </span> 
             </div>  
-           
-                       
         `)
     );
     if (carrito != "") {
       contenedorCarritoJs.innerHTML += `
                 <div id= finalizarcompra>
                     <span> Total: $${total} </span>
-                    <button  id=finalizar_compra>Finalizar comprar</button>
+                    <button  id=finalizar_compra class="botonFinalizar">Finalizar comprar</button>
                 </div>
             `;
       let botonesSumar = document.querySelectorAll(`.class_boton_agregar`);
-      let botonesRestar = document.querySelectorAll(`.class_boton_restar`);
+      let botonesRestar = document.querySelectorAll(`.botonRestar`);
       let botonesEliminarArticulos =
-        document.querySelectorAll(`.botones_quitar`);
+        document.querySelectorAll(`.botonQuitar`);
 
       botonesEliminarArticulos.forEach((el) => (el.onclick = elminar_articulo));
       botonesRestar.forEach((el) => (el.onclick = restar_cantidad));
@@ -147,11 +144,6 @@ function sistema(productos) {
     </section>
 `;
     }
-
-    //   <div id= carritosinproductos>
-    //                 <span>No tiene articulos en su carrito </span>
-    //             </div>
-    //         `;
   }
 
   function click_fuera(e) {
@@ -216,17 +208,16 @@ function sistema(productos) {
     Toastify({
       text: `Se a agregado un producto  ${productos[id_extraido - 1].nombre} `,
       duration: 2000,
-      //destination: "https://github.com/apvarun/toastify-js",
       newWindow: true,
       close: true,
       className: "toastify_estilo",
-      gravity: "bottom", // `top` or `bottom`
-      position: "right", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
+      gravity: "bottom", 
+      position: "right", 
+      stopOnFocus: true, 
       style: {
         background: "linear-gradient(to right, #ff006a, #eb60df)",
       },
-      onClick: function () {}, // Callback after click
+      onClick: function () {}, 
     }).showToast();
   }
 
@@ -283,8 +274,8 @@ function sistema(productos) {
             ${ventana_envio.innerHTML}
             <div>
                 <span> Total: $ ${total} </span>
-                <button  id=boton_volver> Volver a la tienda</button>
-                <button  id=boton_confirmar> Confirmar compra</button>
+                <button  id=boton_volver class="botonVolver"> Volver a la tienda</button>
+                <button  id=boton_confirmar class="botonConfirmar"> Confirmar compra</button>
             </div>
         </div>
     `;
@@ -302,7 +293,7 @@ function sistema(productos) {
             <p>
                     Gracias por comprar en rage!
                 </p>
-                <button  id=boton_aceptar>aceptar</button>
+                <button  id=boton_aceptar class="botonAceptar">aceptar</button>
             </div>   
         `;
       localStorage.clear();
@@ -322,9 +313,9 @@ function sistema(productos) {
       ventana_envio.innerHTML = "";
       ventana_envio.classList.remove("ventana_finalizado_comprar");
       contenedorCarritoJs.innerHTML = `
-        <div >
-            <span> No tiene articulos en su carrito </span>
-        </div>
+      <section id="sub_contenedor"> 
+      <p class="text_sin_articulo">No tiene articulos en su carrito </p>
+  </section>
     `;
     }
   }
