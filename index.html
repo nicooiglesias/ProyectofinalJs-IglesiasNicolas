@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Rage</title>
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+
+    <nav class="navbar navbar-expand-lg ">
+        <h2 class="navbar-brand d-flex">RAGE</h2>
+        <div class="d-flex container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Remeras</a></li>
+                            <li><a class="dropdown-item" href="#">Bermudas</a></li>
+                            <li><a class="dropdown-item" href="#">Jeans</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Zapatillas</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="contendor_buscar">
+                    <form class="d-flex" role="search">
+                        <input class="e" type="search" id="inputBuscar" placeholder="Escribe un producto"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="button" id="botonBuscar">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="mainHtml">
+        
+        
+        <section class="filtro">
+            <article>
+                <div class="filtroContenedor">
+                    <p>Filtrado por categorias</p>
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="remera" class="categorias" id="Remeras">
+                            <label for="remeras">Remeras</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="bermuda" class="categorias" id="Bermudas">
+                            <label for="bermudas">Bermudas</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="zapatilla" class="categorias" id="Zapatillas">
+                            <label for="zapatillas">Zapatillas</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="Jeans" class="categorias" id="Jeans">
+                            <label for="jeans">Jeans</label>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+        
+        <section class="producto" id="contenedorPrincipal">
+        </section>
+        <div class="carro">
+            <button type="button" id="mostrar" class="mostrar">carrito </button>
+            </div>
+            <div id="contenedorCarrito" class="ocultar">
+            </div>
+    </main>
+    <footer>
+
+    </footer>
+    
+    <script src="./js/prueba.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</body>
+
+</html>
